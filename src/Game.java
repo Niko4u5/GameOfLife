@@ -10,7 +10,16 @@ public class Game {
         this.board = newBoard;
     }
 
-     private int getNeighbors(int x, int y){
+    public boolean getBoard(int x, int y) {
+        try {
+            return board[x][y];
+        }catch (ArrayIndexOutOfBoundsException e){
+            return false;
+        }
+
+    }
+
+    public int getNeighbors(int x, int y){
         int count = 0;
         if(getBoard(x - 1,y - 1))
             count++;
@@ -28,5 +37,8 @@ public class Game {
             count++;
         if(getBoard(x + 1,y + 1))
             count++;
+        return count;
     }
+
+
 }
