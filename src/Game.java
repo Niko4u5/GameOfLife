@@ -3,8 +3,8 @@ public class Game {
     boolean[][] newBoard;
     int count;
 
-    Game(int x, int y){
-        board = new boolean[x][y];
+    Game(int x){
+        board = new boolean[x][x];
     }
 
     Game(boolean[][] setBoard) {
@@ -12,12 +12,7 @@ public class Game {
     }
 
     public boolean getBoard(int x, int y) {
-        try {
-            return board[x][y];
-        }catch (ArrayIndexOutOfBoundsException e){
-            return (false);
-        }
-
+            return board[Math.floorMod(x, board.length)][Math.floorMod(y, (board.length))];
     }
 
     public int getNeighbors(int x, int y){
