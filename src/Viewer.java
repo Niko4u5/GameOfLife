@@ -1,7 +1,4 @@
-import javax.swing.*;
-import java.awt.*;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 public class Viewer {
     public void window() throws InterruptedException {
